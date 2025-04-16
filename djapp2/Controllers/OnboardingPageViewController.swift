@@ -5,24 +5,16 @@ protocol OnboardingPageDelegate: AnyObject {
 }
 
 class OnboardingPageViewController: UIPageViewController {
-    
+
     private let steps: [OnboardingStep]
     private var pages: [OnboardingStepViewController] = []
-    
-    private var isSwipeEnabled = true
-    
     private var currentIndex = 0
     weak var pageDelegate: OnboardingPageDelegate?
 
     init(steps: [OnboardingStep]) {
         self.steps = steps
         super.init(transitionStyle: .scroll, navigationOrientation: .horizontal)
-        self.pages = steps.map { step in
-            let vc = OnboardingStepViewController(step: step)
-            vc.onNext = { [weak self] in self?.goToNextPage() }
-            return vc
-        }
-        self.pages.forEach { $0.parentPageViewController = self }
+        setupPages()
         self.dataSource = self
         self.delegate = self
     }
@@ -38,36 +30,9 @@ class OnboardingPageViewController: UIPageViewController {
         }
     }
 
-    func setSwipeEnabled(_ enabled: Bool) {
-        isSwipeEnabled = enabled
-        for view in view.subviews {
-            if let scrollView = view as? UIScrollView {
-                scrollView.isScrollEnabled = enabled
-            }
-        }
-    }
-    
     func reloadCurrentPage() {
         guard let currentVC = viewControllers?.first else { return }
-
-        // Force UIPageViewController to refresh direction
-        setViewControllers([currentVC], direction: .forward, animated: false, completion: nil)
-    }
-    
-    private func goToNextPage() {
-        let nextIndex = currentIndex + 1
-        guard nextIndex < pages.count else { return }
-        setViewControllers([pages[nextIndex]], direction: .forward, animated: true)
-        currentIndex = nextIndex
-        pageDelegate?.onboardingPage(didMoveTo: currentIndex)
-    }
-
-    func goToPage(index: Int, animated: Bool = true) {
-        guard index >= 0, index < pages.count else { return }
-        let direction: NavigationDirection = index > currentIndex ? .forward : .reverse
-        setViewControllers([pages[index]], direction: direction, animated: animated)
-        currentIndex = index
-        pageDelegate?.onboardingPage(didMoveTo: index)
+        setViewControllers([currentVC], direction: .forward, animated: false)
     }
 
     func numberOfPages() -> Int {
@@ -76,6 +41,23 @@ class OnboardingPageViewController: UIPageViewController {
 
     func currentPageIndex() -> Int {
         return currentIndex
+    }
+
+    private func setupPages() {
+        self.pages = steps.map { step in
+            let vc = OnboardingStepViewController(step: step)
+            vc.onNext = { [weak self] in self?.goToNextPage() }
+            vc.parentPageViewController = self
+            return vc
+        }
+    }
+
+    private func goToNextPage() {
+        let nextIndex = currentIndex + 1
+        guard nextIndex < pages.count else { return }
+        setViewControllers([pages[nextIndex]], direction: .forward, animated: true)
+        currentIndex = nextIndex
+        pageDelegate?.onboardingPage(didMoveTo: currentIndex)
     }
 }
 
@@ -96,7 +78,7 @@ extension OnboardingPageViewController: UIPageViewControllerDataSource, UIPageVi
             return nil
         }
 
-        // Block forward swipe from .selectSkill if no option is selected
+        // Block forward swipe if current step is not completed
         guard current.isStepCompleted else {
             return nil
         }
