@@ -6,7 +6,18 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		B58E7E572DB01815004F4F59 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA6A556B2DA9751300342654 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA6A55722DA9751300342654;
+			remoteInfo = djapp2;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		B58E7E532DB01815004F4F59 /* djapp2XCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = djapp2XCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA6A55732DA9751300342654 /* djapp2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = djapp2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -21,6 +32,11 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		B58E7E542DB01815004F4F59 /* djapp2XCTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = djapp2XCTests;
+			sourceTree = "<group>";
+		};
 		FA6A55752DA9751300342654 /* djapp2 */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
@@ -32,6 +48,13 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B58E7E502DB01815004F4F59 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FA6A55702DA9751300342654 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -46,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				FA6A55752DA9751300342654 /* djapp2 */,
+				B58E7E542DB01815004F4F59 /* djapp2XCTests */,
 				FA6A55742DA9751300342654 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				FA6A55732DA9751300342654 /* djapp2.app */,
+				B58E7E532DB01815004F4F59 /* djapp2XCTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,6 +86,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		B58E7E522DB01815004F4F59 /* djapp2XCTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B58E7E592DB01815004F4F59 /* Build configuration list for PBXNativeTarget "djapp2XCTests" */;
+			buildPhases = (
+				B58E7E4F2DB01815004F4F59 /* Sources */,
+				B58E7E502DB01815004F4F59 /* Frameworks */,
+				B58E7E512DB01815004F4F59 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B58E7E582DB01815004F4F59 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				B58E7E542DB01815004F4F59 /* djapp2XCTests */,
+			);
+			name = djapp2XCTests;
+			packageProductDependencies = (
+			);
+			productName = djapp2XCTests;
+			productReference = B58E7E532DB01815004F4F59 /* djapp2XCTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		FA6A55722DA9751300342654 /* djapp2 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA6A55862DA9751400342654 /* Build configuration list for PBXNativeTarget "djapp2" */;
@@ -93,6 +141,10 @@
 				LastSwiftUpdateCheck = 1630;
 				LastUpgradeCheck = 1630;
 				TargetAttributes = {
+					B58E7E522DB01815004F4F59 = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = FA6A55722DA9751300342654;
+					};
 					FA6A55722DA9751300342654 = {
 						CreatedOnToolsVersion = 16.3;
 					};
@@ -113,11 +165,19 @@
 			projectRoot = "";
 			targets = (
 				FA6A55722DA9751300342654 /* djapp2 */,
+				B58E7E522DB01815004F4F59 /* djapp2XCTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		B58E7E512DB01815004F4F59 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FA6A55712DA9751300342654 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -128,6 +188,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B58E7E4F2DB01815004F4F59 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FA6A556F2DA9751300342654 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -137,7 +204,49 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		B58E7E582DB01815004F4F59 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA6A55722DA9751300342654 /* djapp2 */;
+			targetProxy = B58E7E572DB01815004F4F59 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		B58E7E5A2DB01815004F4F59 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = andreyrozhkov.djapp2XCTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/djapp2.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/djapp2";
+			};
+			name = Debug;
+		};
+		B58E7E5B2DB01815004F4F59 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = andreyrozhkov.djapp2XCTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/djapp2.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/djapp2";
+			};
+			name = Release;
+		};
 		FA6A55872DA9751400342654 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -316,6 +425,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B58E7E592DB01815004F4F59 /* Build configuration list for PBXNativeTarget "djapp2XCTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B58E7E5A2DB01815004F4F59 /* Debug */,
+				B58E7E5B2DB01815004F4F59 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FA6A556E2DA9751300342654 /* Build configuration list for PBXProject "djapp2" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
